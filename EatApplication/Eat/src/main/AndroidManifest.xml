@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eat" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.eat.StartActivity"
+            android:theme="@android:style/Theme.Black"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.eat.chapter1.Chapter1Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter2.Chapter2Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter3.Chapter3Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter4.Chapter4Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter5.Chapter5Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter6.Chapter6Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter7.Chapter7Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter8.Chapter8Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter9.Chapter9Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter10.Chapter10Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter11.Chapter11Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter12.Chapter12Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter13.Chapter13Activity"
+            android:theme="@android:style/Theme.Black"/>
+        <activity
+            android:name="com.eat.chapter14.Chapter14Activity"
+            android:theme="@android:style/Theme.Black"/>
+    </application>
+
+</manifest>
