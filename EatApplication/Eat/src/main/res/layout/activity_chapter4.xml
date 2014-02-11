@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="PipeActivity"
+            android:onClick="onPipeActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="LooperActivity"
+            android:onClick="onLooperActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="ConsumeAndQuitThread"
+            android:onClick="onConsumeAndQuitThreadActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="HandlerExampleActivity"
+            android:onClick="onHandlerExampleActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="HandlerCallbackActivity"
+            android:onClick="onHandlerCallbackActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="MQDebugActivity"
+            android:onClick="onMQDebugActivity"/>
 
-</TableLayout>
+    </LinearLayout>
+</ScrollView>

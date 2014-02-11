@@ -5,11 +5,16 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:id="@+id/root"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
-        <!-- EMPTY - NO BUTTONS -->
-
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Handler.Callback"
+            android:layout_weight="1"
+            android:onClick="onHandlerCallback"/>
     </LinearLayout>
 </ScrollView>

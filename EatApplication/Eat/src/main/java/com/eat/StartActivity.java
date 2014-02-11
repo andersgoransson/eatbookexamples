@@ -5,14 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.eat.chapter1.Chapter1Activity;
 import com.eat.chapter10.Chapter10Activity;
 import com.eat.chapter11.Chapter11Activity;
 import com.eat.chapter12.Chapter12Activity;
 import com.eat.chapter13.Chapter13Activity;
 import com.eat.chapter14.Chapter14Activity;
-import com.eat.chapter2.Chapter2Activity;
-import com.eat.chapter3.Chapter3Activity;
 import com.eat.chapter4.Chapter4Activity;
 import com.eat.chapter5.Chapter5Activity;
 import com.eat.chapter6.Chapter6Activity;
@@ -29,15 +26,15 @@ public class StartActivity extends Activity {
     }
 
     public void onChapter1(View v) {
-        startActivity(new Intent(this, Chapter1Activity.class));
+        // Empty, no examples in this chapter.
     }
 
     public void onChapter2(View v) {
-        startActivity(new Intent(this, Chapter2Activity.class));
+        // Empty, no examples in this chapter.
     }
 
     public void onChapter3(View v) {
-        startActivity(new Intent(this, Chapter3Activity.class));
+        // Empty, no examples in this chapter.
     }
 
     public void onChapter4(View v) {
@@ -83,6 +80,4 @@ public class StartActivity extends Activity {
     public void onChapter14(View v) {
         startActivity(new Intent(this, Chapter14Activity.class));
     }
-
-
 }

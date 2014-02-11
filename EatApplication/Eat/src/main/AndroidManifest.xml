@@ -9,56 +9,103 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.eat.StartActivity"
-            android:theme="@android:style/Theme.Black"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- CHAPTER 1 -->
         <activity
             android:name="com.eat.chapter1.Chapter1Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 2 -->
         <activity
             android:name="com.eat.chapter2.Chapter2Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 3 -->
         <activity
             android:name="com.eat.chapter3.Chapter3Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 4 -->
         <activity
             android:name="com.eat.chapter4.Chapter4Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.PipeExampleActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.LooperActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.ConsumeAndQuitThreadActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.HandlerExampleActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.HandlerCallbackActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name=".chapter4.MQDebugActivity"
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 5 -->
         <activity
             android:name="com.eat.chapter5.Chapter5Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 6 -->
         <activity
             android:name="com.eat.chapter6.Chapter6Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 7 -->
         <activity
             android:name="com.eat.chapter7.Chapter7Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 8 -->
         <activity
             android:name="com.eat.chapter8.Chapter8Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 9 -->
         <activity
             android:name="com.eat.chapter9.Chapter9Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 10 -->
         <activity
             android:name="com.eat.chapter10.Chapter10Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 11 -->
         <activity
             android:name="com.eat.chapter11.Chapter11Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 12 -->
         <activity
             android:name="com.eat.chapter12.Chapter12Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 13 -->
         <activity
             android:name="com.eat.chapter13.Chapter13Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
+        <!-- CHAPTER 14 -->
         <activity
             android:name="com.eat.chapter14.Chapter14Activity"
-            android:theme="@android:style/Theme.Black"/>
+            android:theme="@android:style/Theme.Black" />
+
     </application>
 
 </manifest>

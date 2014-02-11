@@ -19,13 +19,15 @@
                 android:layout_height="wrap_content"
                 android:text="Chapter1"
                 android:layout_weight="1"
-                android:onClick="onChapter1"/>
+                android:onClick="onChapter1"
+                android:enabled="false"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Chapter2"
                 android:layout_weight="1"
-                android:onClick="onChapter2"/>
+                android:onClick="onChapter2"
+                android:enabled="false"/>
         </TableRow>
 
         <TableRow
@@ -36,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:text="Chapter3"
                 android:layout_weight="1"
-                android:onClick="onChapter3"/>
+                android:onClick="onChapter3"
+                android:enabled="false"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
