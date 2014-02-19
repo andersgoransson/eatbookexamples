@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.eat" >
+    package="com.eat"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16"/>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -81,6 +90,12 @@
         <!-- CHAPTER 7 -->
         <activity
             android:name="com.eat.chapter7.Chapter7Activity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter7.ThreadRetainActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter7.ThreadRetainWithFragmentActivity"
             android:theme="@android:style/Theme.Black" />
 
         <!-- CHAPTER 8 -->
