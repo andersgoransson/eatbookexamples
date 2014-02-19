@@ -102,6 +102,12 @@
         <activity
             android:name="com.eat.chapter8.Chapter8Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter8.SharedPreferencesActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter8.ChainedNetworkActivity"
+            android:theme="@android:style/Theme.Black" />
 
         <!-- CHAPTER 9 -->
         <activity

@@ -11,7 +11,12 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SharedPreferencesActivity"
-            android:onClick="onSharedPreferencesActivity"/>
+            android:text="Write"
+            android:onClick="onButtonClickWrite"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:onClick="onButtonClickRead"/>
     </LinearLayout>
 </ScrollView>
