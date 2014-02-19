@@ -60,6 +60,18 @@
         <activity
             android:name="com.eat.chapter5.Chapter5Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter5.MessengerOnewayActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter5.MessengerTwowayActivity"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter5.WorkerThreadService"
+            android:process=":eatservice">
+            <intent-filter>
+                <action android:name="com.eat.chapter5.ACTION_BIND"/>
+            </intent-filter>
+        </service>
 
         <!-- CHAPTER 6 -->
         <activity
