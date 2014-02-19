@@ -62,7 +62,8 @@
                 android:layout_height="wrap_content"
                 android:text="Chapter6"
                 android:layout_weight="1"
-                android:onClick="onChapter6"/>
+                android:onClick="onChapter6"
+                android:enabled="false"/>
         </TableRow>
 
         <TableRow
