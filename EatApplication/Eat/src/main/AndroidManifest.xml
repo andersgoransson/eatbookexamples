@@ -113,6 +113,12 @@
         <activity
             android:name="com.eat.chapter9.Chapter9Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter9.InvokeActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter9.ECSImageDownloaderActivity"
+            android:theme="@android:style/Theme.Black" />
 
         <!-- CHAPTER 10 -->
         <activity
