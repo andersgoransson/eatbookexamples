@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -123,6 +124,9 @@
         <!-- CHAPTER 10 -->
         <activity
             android:name="com.eat.chapter10.Chapter10Activity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter10.FileDownloadActivity"
             android:theme="@android:style/Theme.Black" />
 
         <!-- CHAPTER 11 -->
