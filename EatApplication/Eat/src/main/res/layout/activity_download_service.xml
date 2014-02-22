@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:stretchColumns="*"
+        android:shrinkColumns="*">
+
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Start Download"
+                android:layout_weight="1"
+                android:onClick="onStartDownload"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Stop service"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:onClick="onStopService"
+                />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Remote bindService"
+                android:layout_weight="1"
+                android:onClick="onRemoteBindService"
+                android:visibility="invisible"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Remote unbindService"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:onClick="onRemoteUnbindService"
+                android:visibility="invisible"/>
+    </TableRow>
+
+</TableLayout>

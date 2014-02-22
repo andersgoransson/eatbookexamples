@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:stretchColumns="*"
+        android:shrinkColumns="*">
+
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Start listening"
+                android:layout_weight="1"
+                android:onClick="onStartListening"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Stop listening"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:onClick="onStopListening"/>
+    </TableRow>
+
+
+
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bind remote service"
+                android:layout_weight="1"
+                android:onClick="onBindRemote"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unbind remote service"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:onClick="onUnbindRemote"/>
+    </TableRow>
+
+
+
+</TableLayout>

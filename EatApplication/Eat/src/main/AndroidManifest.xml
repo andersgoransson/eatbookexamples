@@ -133,6 +133,22 @@
         <activity
             android:name="com.eat.chapter11.Chapter11Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter11.BluetoothActivity"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter11.BluetoothService"/>
+        <activity
+            android:name="com.eat.chapter11.DownloadActivity"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter11.DownloadService"/>
+        <activity
+            android:name="com.eat.chapter11.BoundLocalActivity1"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter11.BoundLocalActivity2"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter11.BoundLocalService"/>
+        <service android:name="com.eat.chapter11.BoundLocalService2"/>
 
         <!-- CHAPTER 12 -->
         <activity
