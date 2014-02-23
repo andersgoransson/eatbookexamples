@@ -172,6 +172,9 @@
         <activity
             android:name="com.eat.chapter13.Chapter13Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter13.ExpandableContactListActivity"
+            android:theme="@android:style/Theme.Black" />
 
         <!-- CHAPTER 14 -->
         <activity
