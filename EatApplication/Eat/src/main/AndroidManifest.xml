@@ -140,14 +140,19 @@
         <activity
             android:name="com.eat.chapter11.DownloadActivity"
             android:theme="@android:style/Theme.Black" />
-        <service android:name="com.eat.chapter11.DownloadService"/>
+        <service android:name="com.eat.chapter11.DownloadService">
+            <intent-filter>
+                <action android:name="com.eat.ACTION_DOWNLOAD"/>
+                <data android:scheme="http" />
+            </intent-filter>
+        </service>
         <activity
-            android:name="com.eat.chapter11.BoundLocalActivity1"
+            android:name="com.eat.chapter11.BoundLocalActivity"
             android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter11.BoundLocalService"/>
         <activity
             android:name="com.eat.chapter11.BoundLocalActivity2"
             android:theme="@android:style/Theme.Black" />
-        <service android:name="com.eat.chapter11.BoundLocalService"/>
         <service android:name="com.eat.chapter11.BoundLocalService2"/>
 
         <!-- CHAPTER 12 -->

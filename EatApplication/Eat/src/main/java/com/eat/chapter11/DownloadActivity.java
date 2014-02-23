@@ -11,7 +11,6 @@ import com.eat.R;
 
 
 public class DownloadActivity extends Activity {
-    private static final String TAG = "DownloadActivity";
 
     private static final String DOWNLOAD_URL = "http://developer.android.com/design/media/devices_displays_density@2x.png";
 
@@ -22,14 +21,12 @@ public class DownloadActivity extends Activity {
     }
 
     public void onStartDownload(View v) {
-        Log.d(TAG, "onStartDownload");
-        Intent intent = new Intent("com.wifill.eat.ACTION_DOWNLOAD");
+        Intent intent = new Intent("com.eat.ACTION_DOWNLOAD");
         intent.setData(Uri.parse(DOWNLOAD_URL));
         startService(intent);
     }
 
     public void onStopService(View v) {
-        Log.d(TAG, "onStopService");
         Intent intent = new Intent(this, DownloadService.class);
         stopService(intent);
     }

@@ -13,5 +13,20 @@
             android:layout_height="wrap_content"
             android:text="BluetoothActivity"
             android:onClick="onBluetoothActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DownloadActivity"
+            android:onClick="onDownloadActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="BoundLocalActivity"
+            android:onClick="onBoundLocalActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="BoundLocalActivity2"
+            android:onClick="onBoundLocalActivity2"/>
     </LinearLayout>
 </ScrollView>

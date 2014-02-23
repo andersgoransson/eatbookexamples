@@ -13,8 +13,6 @@ import java.util.concurrent.Executors;
 
 public class DownloadService extends Service {
 
-    private static final String TAG = "DownloadService";
-
     private ExecutorService mDownloadExecutor;
     private int mCommandCount;
 
@@ -25,22 +23,17 @@ public class DownloadService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate");
-        mDownloadExecutor = Executors.newFixedThreadPool(5);
+        mDownloadExecutor = Executors.newFixedThreadPool(4);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy");
-        synchronized(this.getClass()) {
-            mDownloadExecutor.shutdownNow();
-        }
+        mDownloadExecutor.shutdownNow();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand - intent = " + intent + ", flags = " + flags + ", startId = " + startId);
         synchronized (this) {
             mCommandCount++;
         }
@@ -54,9 +47,9 @@ public class DownloadService extends Service {
         mDownloadExecutor.submit(new Runnable() {
             @Override
             public void run() {
-                Log.d(TAG, "Thread started");
+
+                // Simulate long file download
                 SystemClock.sleep(10000);
-                Log.d(TAG, "Thread finished");
 
                 synchronized (this) {
                     if (--mCommandCount <= 0) {

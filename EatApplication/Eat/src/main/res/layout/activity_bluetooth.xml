@@ -26,29 +26,4 @@
                 android:layout_weight="1"
                 android:onClick="onStopListening"/>
     </TableRow>
-
-
-
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-        <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Bind remote service"
-                android:layout_weight="1"
-                android:onClick="onBindRemote"/>
-
-        <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Unbind remote service"
-                android:singleLine="false"
-                android:layout_weight="1"
-                android:onClick="onUnbindRemote"/>
-    </TableRow>
-
-
-
 </TableLayout>

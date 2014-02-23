@@ -13,8 +13,6 @@ import java.util.concurrent.Executor;
 
 public class BoundLocalService2 extends Service {
 
-
-    private static final String TAG = "BoundLocalService";
     private final ServiceBinder mBinder = new ServiceBinder();
     private final TaskExecutor executor = new TaskExecutor();
 
@@ -23,21 +21,13 @@ public class BoundLocalService2 extends Service {
     }
 
     public IBinder onBind(Intent intent) {
-        Log.d(TAG, "onBind - this = " + this);
         return mBinder;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate - this = " + this);
 
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        Log.d(TAG, "onConfigurationChanged  - this = " + this);
     }
 
     public class ServiceBinder extends Binder {
@@ -48,7 +38,6 @@ public class BoundLocalService2 extends Service {
 
 
     public int doLongSyncOperation() {
-        Log.d(TAG, "onConfigurationChanged  - this = " + this);
         return longOperation();
     }
 

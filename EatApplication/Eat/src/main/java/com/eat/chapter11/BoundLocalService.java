@@ -9,24 +9,20 @@ import android.util.Log;
 
 public class BoundLocalService extends Service {
 
-    private static final String TAG = "BoundLocalService";
     private final ServiceBinder mBinder = new ServiceBinder();
-    private final ServiceImpl mServiceImpl = new ServiceImpl();
 
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
 
     public class ServiceBinder extends Binder {
-        ServiceImpl getServiceImpl() {
-            return mServiceImpl;
+        public BoundLocalService getService() {
+            return BoundLocalService.this;
         }
     }
 
-    public class ServiceImpl {
-        public int method1() {
-            Log.d(TAG, "method1");
-            return 99;
-        }
-    }
+    // Methods published to clients.
+    public void publishedMethod1() { /* TO IMPLEMENT */ }
+
+    public void publishedMethod2() { /* TO IMPLEMENT */ }
 }

@@ -36,8 +36,6 @@ public class BluetoothService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate - this = " + System.identityHashCode(this));
-        // Is this recreated when the process is restored??
         mAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
@@ -51,20 +49,7 @@ public class BluetoothService extends Service {
         return START_REDELIVER_INTENT;
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        Log.d(TAG, "onConfigurationChanged");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        stopListening();
-    }
-
     private void startListening() {
-        Log.d(TAG, "startListening");
         mListening = true;
         listeningThread = new Thread(new Runnable() {
 
@@ -88,7 +73,6 @@ public class BluetoothService extends Service {
     }
 
     private void stopListening() {
-        Log.d(TAG, "stopListening");
         mListening = false;
         try {
             if (mServerSocket != null) {
@@ -97,5 +81,11 @@ public class BluetoothService extends Service {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        stopListening();
     }
 }

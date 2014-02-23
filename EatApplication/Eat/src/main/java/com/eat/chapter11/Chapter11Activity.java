@@ -19,4 +19,16 @@ public class Chapter11Activity extends Activity {
     public void onBluetoothActivity(View v) {
         startActivity(new Intent(this, BluetoothActivity.class));
     }
+
+    public void onDownloadActivity(View v) {
+        startActivity(new Intent(this, DownloadActivity.class));
+    }
+
+    public void onBoundLocalActivity(View v) {
+        startActivity(new Intent(this, BoundLocalActivity.class));
+    }
+
+    public void onBoundLocalActivity2(View v) {
+        startActivity(new Intent(this, BoundLocalActivity2.class));
+    }
 }

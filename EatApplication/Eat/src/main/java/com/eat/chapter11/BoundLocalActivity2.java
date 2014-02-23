@@ -6,42 +6,51 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
 import com.eat.R;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.lang.ref.WeakReference;
 
 
 public class BoundLocalActivity2 extends Activity {
 
     private TextView tvStatus;
 
-    private final LocalServiceConnection mLocalServiceConnection = new LocalServiceConnection();
-    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private LocalServiceConnection mLocalServiceConnection = new LocalServiceConnection();
     private boolean mIsBound;
     private BoundLocalService2 mBoundLocalService;
 
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            tvStatus.setText(Integer.toString(msg.what));
+    private static class ServiceListener implements BoundLocalService2.OperationListener {
+
+        private WeakReference<BoundLocalActivity2> mWeakActivity;
+
+        public ServiceListener(BoundLocalActivity2 activity) {
+            this.mWeakActivity = new WeakReference<BoundLocalActivity2>(activity);
         }
-    };
+
+        @Override
+        public void onOperationDone(final int someResult) {
+            final BoundLocalActivity2 localReferenceActivity = mWeakActivity.get();
+            if (localReferenceActivity != null) {
+                localReferenceActivity.runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                         localReferenceActivity.tvStatus.setText(Integer.toString(someResult));
+                    }
+                });
+            }
+        }
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bound_local_service_async_client);
+        setContentView(R.layout.activity_bound_local_service_sync_client);
         tvStatus = (TextView) findViewById(R.id.text_status);
 
-
-        tvStatus.setText("Bind to Service");
-        bindService(new Intent(BoundLocalActivity2.this, BoundLocalService.class), mLocalServiceConnection, Service.BIND_AUTO_CREATE);
+        bindService(new Intent(BoundLocalActivity2.this, BoundLocalService2.class), mLocalServiceConnection, Service.BIND_AUTO_CREATE);
         mIsBound = true;
     }
 
@@ -61,13 +70,7 @@ public class BoundLocalActivity2 extends Activity {
 
     public void onClickExecuteOnClientUIThread(View v) {
         if (mBoundLocalService != null) {
-            executor.submit(new Runnable() {
-                @Override
-                public void run() {
-                    int i = mBoundLocalService.doLongSyncOperation();
-                    handler.sendEmptyMessage(i);
-                }
-            });
+            mBoundLocalService.doLongAsyncOperation(new ServiceListener(this));
         }
     }
 
