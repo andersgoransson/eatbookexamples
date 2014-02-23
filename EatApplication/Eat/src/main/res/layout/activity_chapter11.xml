@@ -11,17 +11,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="FileDownloadActivity"
-            android:onClick="onFileDownloadActivity"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="FileDownloadActivity"
-            android:onClick="onFileDownloadActivity"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="FileDownloadActivity"
-            android:onClick="onFileDownloadActivity"/>
+            android:text="BluetoothActivity"
+            android:onClick="onBluetoothActivity"/>
     </LinearLayout>
 </ScrollView>
