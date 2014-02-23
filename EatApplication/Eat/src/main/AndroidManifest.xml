@@ -11,6 +11,11 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -179,6 +184,18 @@
         <!-- CHAPTER 14 -->
         <activity
             android:name="com.eat.chapter14.Chapter14Activity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter14.BasicActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter14.ChromeBookmarkActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter14.ContactActivity"
+            android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter14.FileActivity"
             android:theme="@android:style/Theme.Black" />
 
     </application>
