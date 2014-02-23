@@ -159,6 +159,14 @@
         <activity
             android:name="com.eat.chapter12.Chapter12Activity"
             android:theme="@android:style/Theme.Black" />
+        <activity
+            android:name="com.eat.chapter12.WebServiceActivity"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter12.WebService"/>
+        <activity
+            android:name="com.eat.chapter12.AlarmBroadcastActivity"
+            android:theme="@android:style/Theme.Black" />
+        <service android:name="com.eat.chapter12.NetworkCheckerIntentService"/>
 
         <!-- CHAPTER 13 -->
         <activity
