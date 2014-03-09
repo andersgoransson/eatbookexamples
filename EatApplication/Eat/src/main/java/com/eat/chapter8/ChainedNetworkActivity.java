@@ -41,7 +41,7 @@ public class ChainedNetworkActivity extends Activity {
         @Override
         protected void onLooperPrepared() {
             super.onLooperPrepared();
-            mHandler = new Handler(super.getLooper()) {
+            mHandler = new Handler(getLooper()) {
                 @Override
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
@@ -73,11 +73,6 @@ public class ChainedNetworkActivity extends Activity {
         private void networkOperation2(String data) {
             // Pass data to network, e.g. with HttpPost.
             SystemClock.sleep(2000); // Dummy
-        }
-
-        @Override
-        public Looper getLooper() {
-            throw new RuntimeException("Looper not public");
         }
 
         /**

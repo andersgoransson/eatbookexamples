@@ -49,7 +49,7 @@ public class SharedPreferencesActivity extends Activity {
         @Override
         protected void onLooperPrepared() {
             super.onLooperPrepared();
-            mHandler = new Handler(super.getLooper()) {
+            mHandler = new Handler(getLooper()) {
                 @Override
                 public void handleMessage(Message msg) {
                     switch(msg.what) {
@@ -64,11 +64,6 @@ public class SharedPreferencesActivity extends Activity {
                     }
                 }
             };
-        }
-
-        @Override
-        public Looper getLooper() {
-            throw new RuntimeException("Looper not public");
         }
 
         public void read() {
