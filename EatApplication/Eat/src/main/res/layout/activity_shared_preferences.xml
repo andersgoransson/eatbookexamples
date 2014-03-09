@@ -6,17 +6,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <Button
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Write"
-            android:onClick="onButtonClickWrite"/>
-        <Button
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Write"
+                android:onClick="onButtonClickWrite"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Read"
+                android:onClick="onButtonClickRead"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/text_value"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Read"
-            android:onClick="onButtonClickRead"/>
+            android:text="No value"/>
     </LinearLayout>
 </ScrollView>
