@@ -18,4 +18,8 @@ public class Chapter8Activity extends Activity {
     public void onSharedPreferencesActivity(View v) {
         startActivity(new Intent(this, SharedPreferencesActivity.class));
     }
+
+    public void onChainedNetworkActivity(View v) {
+        startActivity(new Intent(this, ChainedNetworkActivity.class));
+    }
 }

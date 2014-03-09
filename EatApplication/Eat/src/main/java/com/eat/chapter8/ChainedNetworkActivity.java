@@ -3,7 +3,9 @@ package com.eat.chapter8;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.os.*;
+import android.os.Process;
 
 
 public class ChainedNetworkActivity extends Activity {
@@ -27,48 +29,72 @@ public class ChainedNetworkActivity extends Activity {
         }
     };
 
-    private class BackgroundHandler extends Handler {
-        public static final int STATE_A = 1;
+    private class NetworkHandlerThread extends HandlerThread {
+        private static final int STATE_A = 1;
+        private static final int STATE_B = 2;
+        private Handler mHandler;
 
-        public static final int STATE_B = 2;
-
-        public BackgroundHandler(Looper looper) {
-            super(looper);
+        public NetworkHandlerThread() {
+            super("NetworkHandlerThread", Process.THREAD_PRIORITY_BACKGROUND);
         }
 
         @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case STATE_A:
-                    dialogHandler.sendEmptyMessage(SHOW_LOADING);
-                    String result = networkOperation1();
-                    if (result != null) {
-                        sendMessage(obtainMessage(STATE_B, result));
-                    } else {
-                        dialogHandler.sendEmptyMessage(DISMISS_LOADING);
+        protected void onLooperPrepared() {
+            super.onLooperPrepared();
+            mHandler = new Handler(super.getLooper()) {
+                @Override
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what) {
+                        case STATE_A:
+                            dialogHandler.sendEmptyMessage(SHOW_LOADING);
+                            String result = networkOperation1();
+                            if (result != null) {
+                                sendMessage(obtainMessage(STATE_B, result));
+                            } else {
+                                dialogHandler.sendEmptyMessage(DISMISS_LOADING);
+                            }
+                            break;
+                        case STATE_B:
+                            networkOperation2((String) msg.obj);
+                            dialogHandler.sendEmptyMessage(DISMISS_LOADING);
+                            break;
                     }
-                    break;
-                case STATE_B:
-                    networkOperation2((String) msg.obj);
-                    dialogHandler.sendEmptyMessage(DISMISS_LOADING);
-                    break;
-            }
+                }
+            };
+            fetchDataFromNetwork();
+        }
+
+        private String networkOperation1() {
+            SystemClock.sleep(2000); // Dummy
+            return "A string";
+        }
+
+        private void networkOperation2(String data) {
+            // Pass data to network, e.g. with HttpPost.
+            SystemClock.sleep(2000); // Dummy
+        }
+
+        @Override
+        public Looper getLooper() {
+            throw new RuntimeException("Looper not public");
+        }
+
+        /**
+         * Publically exposed network operation
+         */
+        public void fetchDataFromNetwork() {
+            mHandler.sendEmptyMessage(STATE_A);
         }
     }
 
-    private BackgroundHandler stateHandler;
-    private HandlerThread handlerThread;
+    private NetworkHandlerThread mThread;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        handlerThread = new HandlerThread("state-handlerthread");
-        handlerThread.start();
-        stateHandler = new BackgroundHandler(handlerThread.getLooper());
-        stateHandler.sendEmptyMessage(BackgroundHandler.STATE_A);
-
+        mThread = new NetworkHandlerThread();
+        mThread.start();
     }
 
     @Override
@@ -84,12 +110,12 @@ public class ChainedNetworkActivity extends Activity {
         return dialog;
     }
 
-    private String networkOperation1() {
-        SystemClock.sleep(2000);
-        return "A string";
-    }
-
-    private void networkOperation2(String input) {
-        SystemClock.sleep(2000);
+    /**
+     * Ensure that the background thread is terminated with the Activity.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mThread.quit();
     }
 }

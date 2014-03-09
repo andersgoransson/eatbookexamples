@@ -13,5 +13,10 @@
             android:layout_height="wrap_content"
             android:text="SharedPreferencesActivity"
             android:onClick="onSharedPreferencesActivity"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="ChainedNetworkActivity"
+            android:onClick="onChainedNetworkActivity"/>
     </LinearLayout>
 </ScrollView>
