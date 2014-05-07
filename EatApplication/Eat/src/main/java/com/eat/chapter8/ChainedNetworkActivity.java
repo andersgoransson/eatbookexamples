@@ -3,9 +3,12 @@ package com.eat.chapter8;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.SharedPreferences;
-import android.os.*;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.os.Process;
+import android.os.SystemClock;
 
 
 public class ChainedNetworkActivity extends Activity {
@@ -76,7 +79,7 @@ public class ChainedNetworkActivity extends Activity {
         }
 
         /**
-         * Publically exposed network operation
+         * Publicly exposed network operation
          */
         public void fetchDataFromNetwork() {
             mHandler.sendEmptyMessage(STATE_A);
