@@ -29,12 +29,6 @@ public class MyHandlerThread extends HandlerThread {
         };
     }
 
-
-    @Override
-    public Looper getLooper() {
-        throw new RuntimeException("Looper not publically accessible");
-    }
-
     public void publishedMethod1() {
         mHandler.sendEmptyMessage(1);
     }
