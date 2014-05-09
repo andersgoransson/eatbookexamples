@@ -99,8 +99,9 @@ public class FileDownloadActivity extends Activity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
-            mActivity.mProgressBar.setVisibility(View.GONE);
+            if (mActivity != null) {
+                mActivity.mProgressBar.setVisibility(View.GONE);
+            }
         }
 
         @Override
