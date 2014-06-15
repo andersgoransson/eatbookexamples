@@ -85,7 +85,7 @@ public class PipeExampleActivity extends Activity {
         }
         @Override
         public void run() {
-            while(Thread.currentThread().isInterrupted()){
+            while(!Thread.currentThread().isInterrupted()){
                 try {
                     int i;
                     while((i = reader.read()) != -1){
