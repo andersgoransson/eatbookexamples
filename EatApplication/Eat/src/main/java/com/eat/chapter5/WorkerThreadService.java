@@ -20,15 +20,30 @@ public class WorkerThreadService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        mWorkerThread = new WorkerThread();
         mWorkerThread.start();
     }
 
     // Worker thread has prepared a looper and handler.
     private void onWorkerPrepared() {
+        Log.d(TAG, "onWorkerPrepared");
         mWorkerMessenger = new Messenger(mWorkerThread.mWorkerHandler);
+        synchronized(this) {
+            notifyAll();
+        }
     }
 
     public IBinder onBind(Intent intent) {
+        Log.d(TAG, "onBind");
+        synchronized (this) {
+            while (mWorkerMessenger == null) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    // Empty
+                }
+            }
+        }
         return mWorkerMessenger.getBinder();
     }
 
@@ -55,6 +70,9 @@ public class WorkerThreadService extends Service {
                             } catch (RemoteException e) {
                                 Log.e(TAG, e.getMessage());
                             }
+                            break;
+                        case 2:
+                            Log.d(TAG, "Message received");
                             break;
                     }
 

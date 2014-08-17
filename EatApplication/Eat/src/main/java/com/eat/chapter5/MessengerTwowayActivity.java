@@ -44,9 +44,8 @@ public class MessengerTwowayActivity extends Activity {
     }
 
     public void onBindClick(View v) {
-        Intent intent = new Intent("com.wifill.eatservice.ACTION_BIND");
+        Intent intent = new Intent("com.eat.chapter5.ACTION_BIND");
         bindService(intent, mRemoteConnection, Context.BIND_AUTO_CREATE);
-
     }
 
     public void onUnbindClick(View v) {
