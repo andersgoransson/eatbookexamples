@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_pipe">PipeActivity</string>
     <string name="send_message">Send message</string>
+    <string name="send_messages">Send messages</string>
 
 </resources>
