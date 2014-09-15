@@ -7,6 +7,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 
+import com.eat.R;
+
 
 public class LooperActivity extends Activity {
 
@@ -35,6 +37,7 @@ public class LooperActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_looper);
         mLooperThread = new LooperThread();
         mLooperThread.start();
     }
