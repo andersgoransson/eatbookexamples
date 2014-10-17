@@ -47,6 +47,7 @@ public class WebServiceActivity extends Activity {
     public void onPost(View v) {
         Intent intent = new Intent(this, WebService.class);
         intent.setData(Uri.parse(postUrl));
+        intent.putExtra(WebService.INTENT_KEY_REQUEST_TYPE, WebService.POST);
         intent.putExtra(WebService.INTENT_KEY_JSON, "{\"foo\":\"bar\"}");
         intent.putExtra(WebService.INTENT_KEY_RECEIVER, mReceiver);
         startService(intent);
@@ -55,6 +56,7 @@ public class WebServiceActivity extends Activity {
     public void onGet(View v) {
         Intent intent = new Intent(this, WebService.class);
         intent.setData(Uri.parse(getUrl));
+        intent.putExtra(WebService.INTENT_KEY_REQUEST_TYPE, WebService.GET);
         intent.putExtra(WebService.INTENT_KEY_RECEIVER, mReceiver);
         startService(intent);
     }
