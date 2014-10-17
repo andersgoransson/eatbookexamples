@@ -44,7 +44,7 @@ public class WebServiceActivity extends Activity {
         setContentView(R.layout.activity_web_service);
     }
 
-    public void onPost(View v) {
+    public void doPost(View v) {
         Intent intent = new Intent(this, WebService.class);
         intent.setData(Uri.parse(postUrl));
         intent.putExtra(WebService.INTENT_KEY_REQUEST_TYPE, WebService.POST);
@@ -53,7 +53,7 @@ public class WebServiceActivity extends Activity {
         startService(intent);
     }
 
-    public void onGet(View v) {
+    public void doGet(View v) {
         Intent intent = new Intent(this, WebService.class);
         intent.setData(Uri.parse(getUrl));
         intent.putExtra(WebService.INTENT_KEY_REQUEST_TYPE, WebService.GET);

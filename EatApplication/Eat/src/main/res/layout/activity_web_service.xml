@@ -16,7 +16,7 @@
                 android:layout_height="wrap_content"
                 android:text="Post"
                 android:layout_weight="1"
-                android:onClick="onPost"/>
+                android:onClick="doPost"/>
 
         <Button
                 android:layout_width="0dp"
@@ -24,6 +24,6 @@
                 android:text="Get"
                 android:singleLine="false"
                 android:layout_weight="1"
-                android:onClick="onGet"/>
+                android:onClick="doGet"/>
     </TableRow>
 </TableLayout>
